@@ -1,10 +1,10 @@
 {
-  "name": "@cuongw/thinid",
-  "version": "0.5.5",
-  "description": "🚀📦 Easy way to create 🆔 unique ids.",
+  "name": "@cuongw/giin",
+  "version": "0.1.1",
+  "description": "🦄 Simple and lightweight GraphQL client.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "repository": "https://github.com/cuongw/thinid.git",
+  "repository": "https://github.com/cuongw/giin.git",
   "author": "Cuong Duy Nguyen",
   "keywords": [
     "unique-id",
