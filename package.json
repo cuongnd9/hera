@@ -1,0 +1,50 @@
+{
+  "name": "@cuongw/thinid",
+  "version": "0.5.5",
+  "description": "🚀📦 Easy way to create 🆔 unique ids.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "repository": "https://github.com/cuongw/thinid.git",
+  "author": "Cuong Duy Nguyen",
+  "keywords": [
+    "unique-id",
+    "uid",
+    "thinid",
+    "id",
+    "code",
+    "number-code",
+    "number"
+  ],
+  "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@cuongw"
+  },
+  "scripts": {
+    "start": "node ./lib/index.js",
+    "start:dev": "ts-node ./src/index.ts",
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "all-contributors-cli": "^6.3.1",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.4.1",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.4"
+  }
+}
