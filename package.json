@@ -1,27 +1,20 @@
 {
-  "name": "@cuongw/giin",
-  "version": "0.1.1",
+  "name": "giin",
+  "version": "0.5.5",
   "description": "🦄 Simple and lightweight GraphQL client.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "repository": "https://github.com/cuongw/giin.git",
   "author": "Cuong Duy Nguyen",
   "keywords": [
-    "unique-id",
-    "uid",
-    "thinid",
-    "id",
-    "code",
-    "number-code",
-    "number"
+    "giin",
+    "graphql-client",
+    "graphql-request",
+    "graphql"
   ],
-  "license": "MIT",
   "files": [
     "lib/**/*"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@cuongw"
-  },
   "scripts": {
     "start": "node ./lib/index.js",
     "start:dev": "ts-node ./src/index.ts",
