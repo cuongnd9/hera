@@ -1,5 +1,5 @@
 {
-  "name": "@cuongw/thinid",
+  "name": "giin",
   "version": "0.5.5",
   "description": "🚀📦 Easy way to create 🆔 unique ids.",
   "main": "./lib/index.js",
@@ -7,21 +7,14 @@
   "repository": "https://github.com/cuongw/thinid.git",
   "author": "Cuong Duy Nguyen",
   "keywords": [
-    "unique-id",
-    "uid",
-    "thinid",
-    "id",
-    "code",
-    "number-code",
-    "number"
+    "giin",
+    "graphql-client",
+    "graphql-request",
+    "graphql"
   ],
-  "license": "MIT",
   "files": [
     "lib/**/*"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@cuongw"
-  },
   "scripts": {
     "start": "node ./lib/index.js",
     "start:dev": "ts-node ./src/index.ts",
