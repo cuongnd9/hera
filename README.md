@@ -22,6 +22,7 @@ npm install -s giin
 ```ts
 import { giin } from 'giin';
 // const { giin } = require('giin');
+
 giin({
   option: {
     url: 'https://example.com'
@@ -51,11 +52,10 @@ giin({
     url: 'https://example.com'
   },
   query: `
-    query {
-      user(info: $info) {
+    mutation {
+      createUser(info: $info) {
         id
         name
-        sex
         age
         address
         job
@@ -65,7 +65,9 @@ giin({
   variables: {
     info: {
       name: 'Cuong Duy Nguyen',
-      address: 'Ho Chi Minh'
+      age: 21,
+      address: 'Ho Chi Minh',
+      job: 'Software Engineer'
     }
   }
 });
