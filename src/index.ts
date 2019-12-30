@@ -1,3 +1,4 @@
+// tslint:disable
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 function formatVariables(variables: any): any {
