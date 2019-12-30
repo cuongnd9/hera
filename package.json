@@ -1,6 +1,6 @@
 {
   "name": "giin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "🦄 Simple and lightweight GraphQL client.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
