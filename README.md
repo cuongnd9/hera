@@ -73,6 +73,82 @@ giin({
 });
 ```
 
+## API
+
+### options
+
+```ts
+{
+  // `url` is the server URL that will be used for the request
+  url: '/example',
+  // `headers` are custom headers to be sent
+  headers: {
+    token: 'e3ey3yeu3yeu3yeu3y',
+    'Content-Type': 'application/json'
+  }
+}
+```
+
+### query
+
+> `query` is query or mutation in Graphql
+
+**Graphql's query**
+
+```ts
+query: `
+  query {
+    user(id: $id) {
+      id
+      name
+      age
+    }
+  }
+`
+```
+
+**Graphql's mutation**
+
+```ts
+query: `
+  mutation {
+    createUser(info: $info) {
+      id
+      name
+      age
+      address
+      job
+    }
+  }
+`
+```
+
+### variables
+
+> variables is used to pass values to query's variables
+
+```ts
+query: `
+  mutation {
+    createUser(info: $info) {
+      id
+      name
+      age
+      address
+      job
+    }
+  }
+`,
+variables: {
+  info: {
+    name: 'Cuong Duy Nguyen',
+    age: 21,
+    address: 'Ho Chi Minh',
+    job: 'Software Engineer'
+  }
+}
+```
+
 ## Contributors
 
 [![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/0)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/0)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/1)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/1)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/2)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/2)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/3)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/3)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/4)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/4)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/5)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/5)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/6)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/6)[![](https://sourcerer.io/fame/cuongw/cuongw/giin/images/7)](https://sourcerer.io/fame/cuongw/cuongw/giin/links/7)
