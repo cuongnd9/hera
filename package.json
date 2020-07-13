@@ -1,13 +1,14 @@
 {
-  "name": "giin",
-  "version": "0.1.3",
-  "description": "🦄 Simple and lightweight GraphQL client.",
+  "name": "hera-js",
+  "version": "0.2.0",
+  "description": "👩🏼‍💻 Simple and lightweight GraphQL client.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "repository": "https://github.com/103cuong/giin.git",
+  "repository": "https://github.com/103cuong/hera.git",
   "author": "Cuong Duy Nguyen",
   "keywords": [
-    "giin",
+    "hera",
+    "hera-js",
     "graphql-client",
     "graphql-request",
     "graphql"

@@ -1,7 +1,7 @@
-import { giin } from '../src';
+import { hera } from '../src';
 
-test('giin Test', async() => {
-  const data = await giin({
+test('hera test', async() => {
+  const data = await hera({
     option: {
       url: 'https://graphqlzero.almansi.me/api'
     },

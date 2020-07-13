@@ -1,29 +1,26 @@
-# giin
+# hera
 
-🦄 Simple and lightweight GraphQL client.
+👩🏼‍💻 Simple and lightweight GraphQL client.
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
-[![Build Status](https://travis-ci.com/103cuong/giin.svg?branch=master)](https://travis-ci.com/103cuong/giin)
-![npm](https://img.shields.io/npm/v/giin.svg)
-![david](https://img.shields.io/david/103cuong/giin.svg)
-[![Hits-of-Code](https://hitsofcode.com/github/103cuong/giin)](https://hitsofcode.com/view/github/103cuong/giin)
-[![GitHub](https://img.shields.io/github/license/103cuong/giin.svg)](https://github.com/103cuong/giin/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/103cuong/hera.svg?branch=master)](https://travis-ci.com/103cuong/hera)
+![npm](https://img.shields.io/npm/v/hera-js.svg)
+![david](https://img.shields.io/david/103cuong/hera.svg)
+[![Hits-of-Code](https://hitsofcode.com/github/103cuong/hera)](https://hitsofcode.com/view/github/103cuong/hera)
+[![GitHub](https://img.shields.io/github/license/103cuong/hera.svg)](https://github.com/103cuong/hera/blob/master/LICENSE)
 
 ## Installation
 
 ```sh
-yarn add giin
-# or
-npm install -s giin
+yarn add hera-js
 ```
 
 ## Usage
 
 ```ts
-import { giin } from 'giin';
-// const { giin } = require('giin');
+import { hera } from 'hera-js';
 
-giin({
+hera({
   option: {
     url: 'https://example.com'
   },
@@ -44,10 +41,10 @@ giin({
 
 ## 👻 Special 🚧
 
-giin allows passing parameters as objects.
+hera allows passing parameters as objects.
 
 ```ts
-giin({
+hera({
   option: {
     url: 'https://example.com'
   },
@@ -65,7 +62,7 @@ giin({
   variables: {
     info: {
       name: 'Cuong Duy Nguyen',
-      age: 21,
+      age: 22,
       address: 'Ho Chi Minh',
       job: 'Software Engineer'
     }
@@ -83,7 +80,7 @@ giin({
   url: '/example',
   // `headers` are custom headers to be sent
   headers: {
-    token: 'e3ey3yeu3yeu3yeu3y',
+    token: 'Fv0761DZcunUr0dKBc4oo5k55jJchwqu',
     'Content-Type': 'application/json'
   }
 }
@@ -151,7 +148,7 @@ variables: {
 
 ## Contributors
 
-[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/0)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/0)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/1)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/1)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/2)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/2)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/3)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/3)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/4)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/4)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/5)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/5)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/6)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/6)[![](https://sourcerer.io/fame/103cuong/103cuong/giin/images/7)](https://sourcerer.io/fame/103cuong/103cuong/giin/links/7)
+[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/0)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/0)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/1)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/1)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/2)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/2)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/3)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/3)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/4)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/4)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/5)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/5)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/6)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/6)[![](https://sourcerer.io/fame/103cuong/103cuong/hera/images/7)](https://sourcerer.io/fame/103cuong/103cuong/hera/links/7)
 
 ## License
 
