@@ -1,4 +1,3 @@
-// tslint:disable
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 function formatVariables(variables: any): any {
@@ -20,7 +19,7 @@ interface Option {
   headers?: AxiosRequestConfig['headers'];
 }
 
-export function giin({
+const hera = ({
   query,
   variables,
   option,
@@ -28,14 +27,15 @@ export function giin({
   query: string;
   variables?: any;
   option: Option;
-}): Promise<any> {
-  return axios.post(
-    option.url,
-    {
-      query: formatQuery(query, variables),
-    },
-    {
-      headers: option.headers,
-    },
-  ).then((res: AxiosResponse) => res.data.data);
-}
+}): Promise<any> => axios.post(
+  option.url,
+  {
+    query: formatQuery(query, variables),
+  },
+  {
+    headers: option.headers,
+  },
+)
+  .then((res: AxiosResponse) => res.data.data);
+
+export { hera };
