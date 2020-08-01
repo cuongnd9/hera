@@ -1,5 +1,5 @@
 {
-  "name": "hera-js",
+  "name": "@103cuong/hera-js",
   "version": "0.2.0",
   "description": "👩🏼‍💻 Simple and lightweight GraphQL client.",
   "main": "./lib/index.js",
@@ -13,6 +13,9 @@
     "graphql-request",
     "graphql"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "lib/**/*"
   ],
