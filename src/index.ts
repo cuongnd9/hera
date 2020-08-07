@@ -1,17 +1,17 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 
 function formatVariables(variables: any): any {
-  let formatedVariables = JSON.stringify(variables);
-  formatedVariables = formatedVariables.replace(/"([^"]+)"\s*:\s*/g, '$1:');
-  return formatedVariables;
+  let formattedVariables = JSON.stringify(variables);
+  formattedVariables = formattedVariables.replace(/"([^"]+)"\s*:\s*/g, '$1:');
+  return formattedVariables;
 }
 function formatQuery(query: string, variables: any): string {
-  let formatedQuery = query;
-  for (const key in variables) {
+  let formattedQuery = query;
+  Object.keys(variables).forEach((key) => {
     const regex = new RegExp(`\\$${key}`, 'g');
-    formatedQuery = formatedQuery.replace(regex, formatVariables(variables[key]));
-  }
-  return formatedQuery;
+    formattedQuery = formattedQuery.replace(regex, formatVariables(variables[key]));
+  });
+  return formattedQuery;
 }
 
 interface Option {
