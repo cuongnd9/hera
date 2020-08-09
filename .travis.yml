@@ -11,6 +11,8 @@ branches:
 
 install:
   - yarn
+  
+script:
   - yarn test
 
 cache:
