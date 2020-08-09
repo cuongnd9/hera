@@ -30,7 +30,7 @@ const hera = ({
 }): Promise<{ data: any; errors: any[] }> => axios.post(
   option.url,
   {
-    query: formatQuery(query, variables),
+    query: variables ? formatQuery(query, variables): query,
   },
   {
     headers: option.headers,
