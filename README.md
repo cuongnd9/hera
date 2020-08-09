@@ -126,9 +126,9 @@ const { data } = await hera({
 
 ```ts
 hera({
-  options: Options;
   query: string;
   variables?: any;
+  options?: Options;
 }) : Promise<{ data: any; errors: any[] }>
 ```
 
