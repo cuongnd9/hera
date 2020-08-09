@@ -9,18 +9,18 @@
 [![Hits-of-Code](https://hitsofcode.com/github/103cuong/hera)](https://hitsofcode.com/view/github/103cuong/hera)
 [![GitHub](https://img.shields.io/github/license/103cuong/hera.svg)](https://github.com/103cuong/hera/blob/master/LICENSE)
 
-## Installation
+## 🧰 installation
 
 ```sh
 yarn add hera-js
 ```
 
-## Usage
+## 🌳 usage
 
 ```ts
 import { hera } from 'hera-js';
 
-hera({
+const { data } = await hera({
   option: {
     url: 'https://example.com'
   },
@@ -39,12 +39,10 @@ hera({
 });
 ```
 
-## 👻 Special 🚧
-
-hera allows passing parameters as objects.
+**👻 passing parameters as objects**
 
 ```ts
-hera({
+const { data } = await hera({
   option: {
     url: 'https://example.com'
   },
@@ -61,18 +59,48 @@ hera({
   `,
   variables: {
     info: {
-      name: 'Cuong Duy Nguyen',
+      name: 'Cuong Tran',
       age: 22,
-      address: 'Ho Chi Minh',
-      job: 'Software Engineer'
+      address: 'Sai Gon / Vietnam',
+      job: 'software engineer'
     }
   }
 });
 ```
 
-## API
+**🐛 error handling**
 
-### options
+```ts
+const { data, errors } = await hera({
+  option: {
+    url: 'https://example.com'
+  },
+  query: `
+    query {
+      user(id: $id) {
+        id
+        name
+        age
+      }
+    }
+  `,
+  variables: {
+    id: 1
+  }
+});
+```
+
+## 🚀 API
+
+```ts
+hera({
+  option: Option;
+  query: string;
+  variables?: any;
+}) : Promise<{ data: any; errors: any[] }>
+```
+
+### 📝 options
 
 ```ts
 {
@@ -86,11 +114,11 @@ hera({
 }
 ```
 
-### query
+### 📒 query
 
 > `query` is query or mutation in Graphql
 
-**Graphql's query**
+**graphql's query**
 
 ```ts
 query: `
@@ -104,7 +132,7 @@ query: `
 `
 ```
 
-**Graphql's mutation**
+**graphql's mutation**
 
 ```ts
 query: `
@@ -120,7 +148,7 @@ query: `
 `
 ```
 
-### variables
+### 💉 variables
 
 > variables is used to pass values to query's variables
 
@@ -138,10 +166,10 @@ query: `
 `,
 variables: {
   info: {
-    name: 'Cuong Duy Nguyen',
-    age: 21,
-    address: 'Ho Chi Minh',
-    job: 'Software Engineer'
+    name: 'Cuong Tran',
+    age: 22,
+    address: 'Sai Gon / Vietnam',
+    job: 'software engineer'
   }
 }
 ```
@@ -152,4 +180,4 @@ variables: {
 
 ## License
 
-MIT © [103cuong](https://github.com/103cuong)
+MIT © [Cuong Tran](https://github.com/103cuong)
