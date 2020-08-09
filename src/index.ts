@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 function formatVariables(variables: any): any {
   let formattedVariables = JSON.stringify(variables);
@@ -14,29 +14,43 @@ function formatQuery(query: string, variables: any): string {
   return formattedQuery;
 }
 
-interface Option {
-  url: string;
-  headers?: AxiosRequestConfig['headers'];
+interface Options {
+  url?: string;
+  headers?: any;
 }
 
-const hera = ({
+
+const globalOptions: Options = {};
+
+const hera = async ({
   query,
   variables,
-  option,
+  options = globalOptions,
 }: {
   query: string;
   variables?: any;
-  option: Option;
-}): Promise<{ data: any; errors: any[] }> => axios.post(
-  option.url,
-  {
-    query: variables ? formatQuery(query, variables): query,
-  },
-  {
-    headers: option.headers,
-  },
-)
-  .then((res: AxiosResponse) => res.data)
-  .catch(error => ({ data: null, errors: [error] }));
+  options?: Options;
+}): Promise<{ data: any; errors: any[] }> => {
+  if (!options.url) {
+    return {
+      data: null,
+      errors: [new Error('options.url must be provided')],
+    };
+  }
+  try {
+    const res = await axios.post(
+      options.url,
+      {
+        query: variables ? formatQuery(query, variables) : query,
+      },
+      {
+        headers: options.headers,
+      },
+    );
+    return res.data;
+  } catch (error) {
+    return { data: null, errors: [error] };
+  }
+};
 
-export { hera };
+export { hera, globalOptions };

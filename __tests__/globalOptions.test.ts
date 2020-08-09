@@ -1,10 +1,9 @@
-import { hera } from '../src';
+import { hera, globalOptions } from '../src';
+
+globalOptions.url = 'https://graphqlzero.almansi.me/api';
 
 test('hera test', async() => {
   const { data } = await hera({
-    options: {
-      url: 'https://graphqlzero.almansi.me/api'
-    },
     query: `
       query {
         post(id: $id) {
