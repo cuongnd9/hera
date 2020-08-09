@@ -98,6 +98,7 @@ const { data, errors } = await hera({
 import { hera, globalOptions } from 'hera-js';
 
 globalOptions.url = 'https://example.com';
+// globalOptions.headers = <your headers>
 
 const { data } = await hera({
   query: `
