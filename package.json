@@ -5,7 +5,7 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "repository": "https://github.com/103cuong/hera.git",
-  "author": "Cuong Duy Nguyen",
+  "author": "Cuong Tran",
   "keywords": [
     "hera",
     "hera-js",
