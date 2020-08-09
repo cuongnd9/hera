@@ -21,7 +21,7 @@ yarn add hera-js
 import { hera } from 'hera-js';
 
 const { data } = await hera({
-  option: {
+  options: {
     url: 'https://example.com'
   },
   query: `
@@ -43,7 +43,7 @@ const { data } = await hera({
 
 ```ts
 const { data } = await hera({
-  option: {
+  options: {
     url: 'https://example.com'
   },
   query: `
@@ -72,7 +72,7 @@ const { data } = await hera({
 
 ```ts
 const { data, errors } = await hera({
-  option: {
+  options: {
     url: 'https://example.com'
   },
   query: `
@@ -90,13 +90,45 @@ const { data, errors } = await hera({
 });
 ```
 
+**🌏 global options**
+
+> You can specify config defaults that will be applied to every request.
+
+```ts
+import { hera, globalOptions } from 'hera-js';
+
+globalOptions.url = 'https://example.com';
+
+const { data } = await hera({
+  query: `
+    mutation {
+      createUser(info: $info) {
+        id
+        name
+        age
+        address
+        job
+      }
+    }
+  `,
+  variables: {
+    info: {
+      name: 'Cuong Tran',
+      age: 22,
+      address: 'Sai Gon / Vietnam',
+      job: 'software engineer'
+    }
+  }
+});
+```
+
 ## 🚀 API
 
 ```ts
 hera({
-  option: Option;
   query: string;
   variables?: any;
+  options?: Options;
 }) : Promise<{ data: any; errors: any[] }>
 ```
 
