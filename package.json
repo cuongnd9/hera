@@ -37,7 +37,7 @@
     "jest": "^24.7.1",
     "prettier": "^1.17.0",
     "ts-jest": "^24.0.2",
-    "ts-node": "^9.0.0",
+    "ts-node": "^8.4.1",
     "tsc": "^1.20150623.0",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
