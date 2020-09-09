@@ -126,6 +126,12 @@ const { data } = await hera({
 ## 🚀 API
 
 ```ts
+interface Options {
+  url?: string;
+  headers?: any;
+  timeout?: number;
+}
+
 hera({
   query: string;
   variables?: any;
@@ -143,7 +149,7 @@ hera({
   headers: {
     token: 'Fv0761DZcunUr0dKBc4oo5k55jJchwqu',
     'Content-Type': 'application/json'
-  }
+  },
 }
 ```
 
