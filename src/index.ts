@@ -17,6 +17,7 @@ function formatQuery(query: string, variables: any): string {
 interface Options {
   url?: string;
   headers?: any;
+  timeout?: number;
 }
 
 
@@ -45,6 +46,7 @@ const hera = async ({
       },
       {
         headers: options.headers,
+        timeout: options.timeout || 0,
       },
     );
     return res.data;
