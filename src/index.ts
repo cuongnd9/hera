@@ -55,4 +55,4 @@ const hera = async ({
   }
 };
 
-export { hera, globalOptions };
+export { hera, globalOptions, formatQuery };
