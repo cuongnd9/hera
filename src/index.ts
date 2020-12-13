@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { request } from 'xuka';
 
 function formatVariables(variables: any): any {
   let formattedVariables = JSON.stringify(variables);
@@ -39,15 +39,16 @@ const hera = async ({
     };
   }
   try {
-    const res = await axios.post(
+    const res = await request(
       options.url,
       {
-        query: variables ? formatQuery(query, variables) : query,
-      },
-      {
+        method: 'POST',
+        data: {
+          query: variables ? formatQuery(query, variables) : query,
+        },
         headers: options.headers,
         timeout: options.timeout || 0,
-      },
+      }
     );
     return res.data;
   } catch (error) {
