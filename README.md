@@ -3,7 +3,7 @@
 👩🏼‍💻 Simple and lightweight GraphQL client.
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
-[![Build Status](https://travis-ci.com/103cuong/hera.svg?branch=master)](https://travis-ci.com/103cuong/hera)
+[![Build Status](https://travis-ci.com/103cuong/hera.svg?branch=main)](https://travis-ci.com/103cuong/hera)
 ![npm](https://img.shields.io/npm/v/hera-js.svg)
 ![david](https://img.shields.io/david/103cuong/hera.svg)
 [![Hits-of-Code](https://hitsofcode.com/github/103cuong/hera)](https://hitsofcode.com/view/github/103cuong/hera)
