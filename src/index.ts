@@ -20,8 +20,8 @@ interface Options {
   timeout?: number;
 }
 
-
-const globalOptions: Options = {};
+/* tslint:disable */
+let globalOptions: Options = {};
 
 const hera = async ({
   query,
@@ -42,11 +42,11 @@ const hera = async ({
     const res = await request(
       options.url,
       {
-        method: 'POST',
         data: {
           query: variables ? formatQuery(query, variables) : query,
         },
         headers: options.headers,
+        method: 'POST',
         timeout: options.timeout || 0,
       }
     );
