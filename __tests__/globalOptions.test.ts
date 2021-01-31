@@ -14,8 +14,8 @@ test('hera test', async() => {
       }
     `,
     variables: {
-      id: 1
-    }
+      id: 1,
+    },
   });
   expect(data.post.id).toEqual('1');
   expect(typeof data.post.title).toEqual('string');

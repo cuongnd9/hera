@@ -1,15 +1,18 @@
 import { request } from 'xuka';
 
-function formatVariables(variables: any): any {
+function formatVariables(variables: any, enums?: string[]): string {
   let formattedVariables = JSON.stringify(variables);
   formattedVariables = formattedVariables.replace(/"([^"]+)"\s*:\s*/g, '$1:');
+  if (enums && enums.length > 0) {
+    formattedVariables = formattedVariables.replace(new RegExp(`(${enums.join('|')}):\\"\\w*\\"`, 'g'), (value) => value.replace(/\"/g, ''));
+  }
   return formattedVariables;
 }
-function formatQuery(query: string, variables: any): string {
+function formatQuery(query: string, variables: any, enums?: string[]): string {
   let formattedQuery = query;
   Object.keys(variables).forEach((key) => {
     const regex = new RegExp(`\\$${key}`, 'g');
-    formattedQuery = formattedQuery.replace(regex, formatVariables(variables[key]));
+    formattedQuery = formattedQuery.replace(regex, formatVariables(variables[key], enums));
   });
   return formattedQuery;
 }
@@ -18,10 +21,11 @@ interface Options {
   url?: string;
   headers?: any;
   timeout?: number;
+  enums?: string[];
 }
 
-
-const globalOptions: Options = {};
+/* tslint:disable */
+let globalOptions: Options = {};
 
 const hera = async ({
   query,
@@ -42,11 +46,11 @@ const hera = async ({
     const res = await request(
       options.url,
       {
-        method: 'POST',
         data: {
-          query: variables ? formatQuery(query, variables) : query,
+          query: variables ? formatQuery(query, variables, options.enums) : query,
         },
         headers: options.headers,
+        method: 'POST',
         timeout: options.timeout || 0,
       }
     );

@@ -44,7 +44,7 @@ const { data } = await hera({
 ```ts
 const { data } = await hera({
   options: {
-    url: 'https://example.com'
+    url: 'https://example.com',
   },
   query: `
     mutation {
@@ -61,10 +61,10 @@ const { data } = await hera({
     info: {
       name: 'Cuong Tran',
       age: 22,
-      address: 'Sai Gon / Vietnam',
-      job: 'software engineer'
-    }
-  }
+      address: 'Tam Ky - Sai Gon / Vietnam',
+      job: 'software engineer',
+    },
+  },
 });
 ```
 
@@ -73,7 +73,7 @@ const { data } = await hera({
 ```ts
 const { data, errors } = await hera({
   options: {
-    url: 'https://example.com'
+    url: 'https://example.com',
   },
   query: `
     query {
@@ -85,8 +85,8 @@ const { data, errors } = await hera({
     }
   `,
   variables: {
-    id: 1
-  }
+    id: 1,
+  },
 });
 ```
 
@@ -117,9 +117,40 @@ const { data } = await hera({
       name: 'Cuong Tran',
       age: 22,
       address: 'Sai Gon / Vietnam',
-      job: 'software engineer'
+      job: 'software engineer',
+    },
+  },
+});
+```
+
+**💩 enums*
+
+```ts
+const { data } = await hera({
+  query: `
+    mutation {
+      createUser(info: $info) {
+        id
+        name
+        age
+        address
+        job
+        sex
+      }
     }
-  }
+  `,
+  variables: {
+    info: {
+      name: 'Cuong Tran',
+      age: 22,
+      address: 'Sai Gon / Vietnam',
+      job: 'software engineer',
+      sex: 'MALE',
+    },
+  },
+  options: {
+    enums: ['sex'],
+  },
 });
 ```
 
@@ -130,6 +161,7 @@ interface Options {
   url?: string;
   headers?: any;
   timeout?: number;
+  enums?: string[];
 }
 
 hera({
@@ -208,8 +240,8 @@ variables: {
     name: 'Cuong Tran',
     age: 22,
     address: 'Sai Gon / Vietnam',
-    job: 'software engineer'
-  }
+    job: 'software engineer',
+  },
 }
 ```
 
@@ -219,7 +251,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="http://103cuong.me"><img src="https://avatars0.githubusercontent.com/u/34389409?v=4" width="100px;" alt="Cuong Duy Nguyen"/><br /><sub><b>Cuong Duy Nguyen</b></sub></a><br /><a href="https://github.com/103cuong/thinid/commits?author=103cuong" title="Code">💻</a> <a href="https://github.com/103cuong/thinid/commits?author=103cuong" title="Documentation">📖</a> <a href="https://github.com/103cuong/thinid/commits?author=103cuong" title="Tests">⚠️</a> <a href="#review-103cuong" title="Reviewed Pull Requests">👀</a></td></tr></table>
+<table><tr><td align="center"><a href="http://103cuong.me"><img src="https://avatars0.githubusercontent.com/u/34389409?v=4" width="100px;" alt="Cuong Duy Nguyen"/><br /><sub><b>Cuong Duy Nguyen</b></sub></a><br /><a href="https://github.com/103cuong/hera/commits?author=103cuong" title="Code">💻</a> <a href="https://github.com/103cuong/hera/commits?author=103cuong" title="Documentation">📖</a> <a href="https://github.com/103cuong/hera/commits?author=103cuong" title="Tests">⚠️</a> <a href="#review-103cuong" title="Reviewed Pull Requests">👀</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
