@@ -3,7 +3,7 @@ import { hera } from '../src';
 test('hera test', async() => {
   const { data } = await hera({
     options: {
-      url: 'https://graphqlzero.almansi.me/api'
+      url: 'https://graphqlzero.almansi.me/api',
     },
     query: `
       query {
@@ -15,8 +15,8 @@ test('hera test', async() => {
       }
     `,
     variables: {
-      id: 1
-    }
+      id: 1,
+    },
   });
   expect(data.post.id).toEqual('1');
   expect(typeof data.post.title).toEqual('string');
