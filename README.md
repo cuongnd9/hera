@@ -123,7 +123,7 @@ const { data } = await hera({
 });
 ```
 
-**💩 enums*
+**💩 enums**
 
 ```ts
 const { data } = await hera({
